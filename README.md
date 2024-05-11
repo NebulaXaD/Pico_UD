@@ -13,7 +13,7 @@ If you soldered everything correctly, it should draw 500-750mW idle.
 
 If you have spare ic heatsinks, put one on the 3.3V reg since it gets a bit warm after the board is powered for extended periods.
 
-Technically board supports upto 28V input, but i recommend going 20V and winding a 1:1 gdt since theres almost no benefits of going higher, also at high frequencies the board will draw upwards of 75W due to cross conductions of the gdt fets so have a beefy psu powering it (at least 2-3A capable). You can lower the consumption with increasing the 100Ohm gate resistor to 470 or 1k, which makes it draw about 5-10W cw but might result into slower gate rise times so wouldnt recommend this for qcw or other pulsed operations.
+Technically board supports upto 28V input, but i recommend going 20V and winding a 1:1 gdt (or 24V and 1.2:1 gdt) since theres almost no benefits of going higher, also at high frequencies the board will draw upwards of 75W due to cross conductions of the gdt fets so have a beefy psu powering it (at least 2-3A capable). You can lower the consumption with increasing the 100Ohm gate resistor to 470 or 1k, which makes it draw about 5-10W cw but might result into slower gate rise times so wouldnt recommend this for qcw or other pulsed operations.
 
 Unlike a regular drsstc, here its very important where you place the gdts and how they are oriented, make sure each gdt is assigned to a separate halfbridge and check if the phase shift starts at max or at min - flip a primary of one gdt and it will fix it.
 
