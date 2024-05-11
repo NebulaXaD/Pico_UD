@@ -3,7 +3,7 @@ A modified version of the popular UD2.7 tesla coil driver to support phase-shift
 
 # Board info:
 
-The connectors on the side are...
+![PicoUD](https://github.com/NebulaXaD/Pico_UD/blob/main/picoud.png)
 
 The upper pot controls the phase lead, the tht one controls the frequency for the startup and phase lead of the coil (very important this one is tuned well, mentioned later why), and the lower one controls ocd.
 
