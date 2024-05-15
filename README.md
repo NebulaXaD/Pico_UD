@@ -31,7 +31,7 @@ Altho i recommend shielding the board, i have never had any noise issues running
 
 Connect a 47 - 150nF 2+kV cap from the bottom of the secondary to the negative rail of the bridge, this is will protect it from arc overs and is enough grounding for the circuit to work properly, this is not a joke btw.
 
-While calculating res freq. of your setup, keep in mind that it will ring on the upper pole so your operating freq will actually be: secondary freq / sqrt ( 1 - coupling) so try not to make it too high.
+While calculating res freq. of your setup, keep in mind that it will ring on the upper pole so your operating freq will actually be around:  fres / sqrt ( 1 - coupling) so try not to make it too high.
 
 For this setup, watch the spikes at the beginning of the pulses across the hard switched igbts and in case they are concerning, put rc snubbers across them. In my case 2s2p of 5.1Ohm 2W resistors (watch the temp of these, i killed a single 2W resistor in an earlier setup with a single pulse!) with a 2kV 4.7nF cap did the job.
 
