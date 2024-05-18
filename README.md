@@ -1,6 +1,8 @@
 # PicoUD
 A modified version of the popular UD2.7 tesla coil driver to support phase-shifted qcw operation (and some other cool features)
 
+Planned to add compatibility to drive psfb induction heater when I have more time.
+
 # Board info:
 
 ![PicoUD](https://github.com/NebulaXaD/Pico_UD/blob/main/picoud.png)
@@ -8,8 +10,6 @@ A modified version of the popular UD2.7 tesla coil driver to support phase-shift
 The upper pot controls the phase lead, the tht one controls the frequency for the startup and phase lead of the coil (very important this one is tuned well, mentioned later why), and the lower one controls ocd.
 
 # Some notes on the design:
-
-If you soldered everything correctly, it should draw 500-750mW idle.
 
 If you have spare ic heatsinks, put one on the 3.3V reg since it gets a bit warm after the board is powered for extended periods.
 
@@ -19,7 +19,7 @@ Unlike a regular drsstc, here its very important where you place the gdts and ho
 
 Aim to about 1A of feedback current, but you can go lower for longer pulses / cw (might get implemented later), this circuit is really sensitive on the input side and can lock onto the feedback with only couple of volts across the primary and 1:100 ct in my setup.
 
-Due to how i made the code handle phase shifting, if the angle goes over 180°, it will start to act really unpredictibly and be undstable so to counter that, the code currently only allows you to go up to 165-170° as a safety feature. Luckily the coil is at its highest frequency at the beginning so as the freq drops, the phase shift angle will too so you dont have to worry too much about arc detunning messing with the driver.
+Due to how i made the code handle phase shifting, if the angle goes over 180°, it will start to act really unpredictibly and be unstable so to counter that, the code currently only allows you to go up to 165-170° as a safety feature. Luckily the coil is at its highest frequency at the beginning so as the freq drops, the phase shift angle will too so you dont have to worry too much about arc detunning messing with the driver.
 
 The idea was to use a pico W to control everything, but to save on money in case i blow more of them i made the prototype with the basic pico and for the time being, theres an input to control it - it reads the duration of the 3.3v pulse and creates a ramp to match it, for example a 20ms pulse would mean 16ms rise and 4ms fall ramp. -This will be changed in the future.
 
